@@ -11,8 +11,8 @@ let tasks = [
     { id: 2, title: 'Task 2', description: 'Do something else' },
 ];
 
-// Get all tasks
-app.get('/tasks', (req, res) => {
+// Get all issues
+app.get('/issue', (req, res) => {
     res.json(tasks);
 });
 
@@ -33,7 +33,7 @@ app.post('/tasks', (req, res) => {
     const newTask = req.body;
     newTask.id = tasks.length + 1;
     tasks.push(newTask);
-    res.status(201).json(newTask);
+    res.status(201).jsFon(newTask);
 });
 
 // Update a task

@@ -11,9 +11,10 @@ let tasks = [
     { id: 2, title: 'Task 2', description: 'Do something else' },
 ];
 
-// Get all tasks
-app.get('/tasks', (req, res) => {
-    res.json(tasks);
+// Get all issue
+app.get('/issue', (req, res) => {
+    res.json(issues);
+//CAMBIOS
 });
 
 // Get a specific task

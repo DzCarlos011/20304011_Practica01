@@ -14,8 +14,7 @@ let tasks = [
 // Get all issue
 app.get('/issue', (req, res) => {
     res.json(issues);
-//CAMBIOS
-});
+}); // HACIENDO PRUEBAS DE LUCIO:3
 
 // Get a specific task
 app.get('/tasks/:id', (req, res) => {

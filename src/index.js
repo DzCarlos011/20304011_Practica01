@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const tasksRepository = require("./tasksRepository");
 const app = express();
 const port = 3000;
 
@@ -11,10 +11,18 @@ let tasks = [
     { id: 2, title: 'Task 2', description: 'Do something else' },
 ];
 
+ feature/testing-01
+// Get all tasks
+app.get('/tasks', (req, res) => {
+    const tasks = tasksRepository.getAll()
+    res.json(tasks);
+});
+
 // Get all issue
 app.get('/issue', (req, res) => {
     res.json(issues);
 }); // HACIENDO PRUEBAS DE LUCIO:3 1.0
+ develop
 
 // Get a specific task
 app.get('/tasks/:id', (req, res) => {
@@ -31,8 +39,7 @@ app.get('/tasks/:id', (req, res) => {
 // Create a new task
 app.post('/tasks', (req, res) => {
     const newTask = req.body;
-    newTask.id = tasks.length + 1;
-    tasks.push(newTask);
+    tasksRepository.createTask(newTask);
     res.status(201).json(newTask);
 });
 
@@ -40,7 +47,8 @@ app.post('/tasks', (req, res) => {
 app.put('/tasks/:id', (req, res) => {
     const taskId = parseInt(req.params.id);
     const updatedTask = req.body;
-    const index = tasks.findIndex((t) => t.id === taskId);
+    const task = tasksRepository.updateTask(taskId, updatedTask)
+    //const index = tasks.findIndex((t) => t.id === taskId);
 
     if (index !== -1) {
         tasks[index] = { ...tasks[index], ...updatedTask };
@@ -53,7 +61,8 @@ app.put('/tasks/:id', (req, res) => {
 // Delete a task
 app.delete('/tasks/:id', (req, res) => {
     const taskId = parseInt(req.params.id);
-    tasks = tasks.filter((t) => t.id !== taskId);
+    tasksRepository.deleteTask.delete(taskId)
+    //tasks = tasks.filter((t) => t.id !== taskId);
     res.sendStatus(204);
 });
 

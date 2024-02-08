@@ -11,11 +11,18 @@ let tasks = [
     { id: 2, title: 'Task 2', description: 'Do something else' },
 ];
 
+ feature/testing-01
 // Get all tasks
 app.get('/tasks', (req, res) => {
     const tasks = tasksRepository.getAll()
     res.json(tasks);
 });
+
+// Get all issue
+app.get('/issue', (req, res) => {
+    res.json(issues);
+}); // HACIENDO PRUEBAS DE LUCIO:3 1.0
+ develop
 
 // Get a specific task
 app.get('/tasks/:id', (req, res) => {

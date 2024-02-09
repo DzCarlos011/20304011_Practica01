@@ -18,9 +18,13 @@ function getAll() {
     return tasks;
 }
 
+ release/version1
+// TOMA UNA TAREA
+
  feature/testing02
 // TOMAR UNA TAREA
 
+ main
  main
 function getById(taskId) {
     return tasks.find((t) => t.id === taskId);
@@ -35,9 +39,13 @@ function createTask(newTask) {
     tasks.push(newTask);
 }
 
+ release/version1
+// ACTUALIZACION
+=======
  feature/testing02
 // ACTUALIZATION
 
+ main
  main
 function updateTask(taskId, updatedTask) {
     const index = tasks.findIndex((t) => t.id === taskId);

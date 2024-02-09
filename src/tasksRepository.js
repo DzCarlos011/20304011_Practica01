@@ -20,7 +20,7 @@ function createTask(newTask) {
     tasks.push(newTask);
 }
 
-// ACTUALIZATION
+// ACTUALIZACION
 function updateTask(taskId, updatedTask) {
     const index = tasks.findIndex((t) => t.id === taskId);
     if (index !== -1) {

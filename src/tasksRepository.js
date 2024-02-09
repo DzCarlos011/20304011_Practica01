@@ -9,7 +9,7 @@ function getAll() {
     return tasks;
 }
 
-// TOMAR UNA TAREA
+// TOMA UNA TAREA
 function getById(taskId) {
     return tasks.find((t) => t.id === taskId);
 }

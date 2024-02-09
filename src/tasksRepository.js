@@ -1,22 +1,26 @@
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 let tasks = [
-    { id: 1, title: 'Task 1', description: 'Do something' },
-    { id: 2, title: 'Task 2', description: 'Do something else' },
+    { id: 1, title: "Task 1", description: "Do something" },
+    { id: 2, title: "Task 2", description: "Do something else" },
 ];
 
-
+// TOMAR TODAS LAS TAREAS ASIGNADAS
 function getAll() {
     return tasks;
 }
 
+// TOMA UNA TAREA
 function getById(taskId) {
     return tasks.find((t) => t.id === taskId);
 }
 
+// CREAR
 function createTask(newTask) {
     newTask.id = tasks.length + 1;
     tasks.push(newTask);
 }
 
+// ACTUALIZACION
 function updateTask(taskId, updatedTask) {
     const index = tasks.findIndex((t) => t.id === taskId);
     if (index !== -1) {
@@ -27,6 +31,7 @@ function updateTask(taskId, updatedTask) {
     }
 }
 
+// ELIMINACION 
 function deleteTask(taskId) {
     tasks = tasks.filter((t) => t.id !== taskId);
 }
@@ -36,5 +41,5 @@ module.exports = {
     getById,
     createTask,
     updateTask,
-    deleteTask
+    deleteTask,
 };
